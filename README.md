@@ -5,6 +5,9 @@ catalog feeds for Google Merchant Center, Meta Commerce Manager, and ChatGPT
 Business Hub. It also includes a standalone PostgreSQL-backed license service
 for one-time, domain-locked licenses.
 
+- Product website and documentation: [soft.sahoolat.pk](https://soft.sahoolat.pk/)
+- Website source: [dev-abrar-hussain/Soft-Sahoolat](https://github.com/dev-abrar-hussain/Soft-Sahoolat)
+
 The canonical scope and definition of done are in [PROJECT_PLAN.md](PROJECT_PLAN.md).
 
 ## Included features
