@@ -1,0 +1,14 @@
+node_modules/
+license-server/node_modules/
+.env
+license-server/.env
+dist/
+tmp/
+website/
+deploy/
+AGENTS.md
+WooFeeds Pro — WooCommerce Multi-Channel Feed Generator with Licensing.pdf
+*.log
+.DS_Store
+Thumbs.db
+

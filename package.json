@@ -1,0 +1,13 @@
+{
+  "name": "woofeeds-pro-workspace",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check:php": "node tools/check-php-syntax.mjs",
+	"test": "npm run check:php && npm --prefix license-server test"
+  },
+  "devDependencies": {
+    "php-parser": "^3.2.5"
+  }
+}
+

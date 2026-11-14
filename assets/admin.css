@@ -1,0 +1,31 @@
+.woofeeds-wrap { max-width: 1180px; }
+.woofeeds-tabs { margin-top: 24px; }
+.woofeeds-panel { background: #fff; border: 1px solid #dcdcde; border-top: 0; padding: 24px; }
+.woofeeds-grid { display: grid; gap: 16px; margin: 4px 0 28px; }
+.woofeeds-grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.woofeeds-card { background: #f6f7f7; border: 1px solid #dcdcde; border-radius: 5px; padding: 18px; }
+.woofeeds-card h3 { margin: 0 0 12px; }
+.woofeeds-card strong { display: block; font-size: 20px; line-height: 1.3; }
+.woofeeds-card p { color: #50575e; margin-bottom: 0; }
+.woofeeds-feed-list { border: 1px solid #dcdcde; border-radius: 5px; overflow: hidden; }
+.woofeeds-feed-row { align-items: center; display: grid; gap: 16px; grid-template-columns: minmax(160px, .7fr) minmax(300px, 2fr) auto; padding: 14px 16px; }
+.woofeeds-feed-row + .woofeeds-feed-row { border-top: 1px solid #dcdcde; }
+.woofeeds-feed-row input { width: 100%; }
+.woofeeds-actions { margin-top: 20px; }
+.woofeeds-url-box { align-items: center; background: #f6f7f7; display: flex; gap: 14px; justify-content: space-between; margin: 18px 0; padding: 14px; }
+.woofeeds-url-box code { overflow-wrap: anywhere; }
+.woofeeds-validation-list { display: grid; gap: 8px; grid-template-columns: repeat(2, minmax(0, 1fr)); margin: 20px 0; }
+.woofeeds-validation-list li { border-left: 4px solid #00a32a; background: #f6f7f7; margin: 0; padding: 10px 12px; }
+.woofeeds-validation-list li.has-issue { border-left-color: #d63638; }
+.woofeeds-status { border-radius: 999px; display: inline-block; font-weight: 600; padding: 5px 12px; background: #f0f0f1; }
+.woofeeds-status-active { background: #d7f5df; color: #005f1d; }
+.woofeeds-status-grace { background: #fcf0c3; color: #6e4c00; }
+.woofeeds-status-invalid, .woofeeds-status-offline_expired { background: #f7d7d7; color: #8a2424; }
+.woofeeds-license-form { margin: 20px 0 28px; }
+@media (max-width: 782px) {
+  .woofeeds-grid-3, .woofeeds-validation-list { grid-template-columns: 1fr; }
+  .woofeeds-feed-row { grid-template-columns: 1fr; }
+  .woofeeds-panel { padding: 16px; }
+  .woofeeds-url-box { align-items: stretch; flex-direction: column; }
+}
+
