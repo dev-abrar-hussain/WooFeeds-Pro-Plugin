@@ -99,17 +99,20 @@ function expressRaw() {
   return async (req, res, next) => {
     const chunks = [];
     let size = 0;
+    let rejected = false;
     req.on('data', (chunk) => {
+	  if (rejected) return;
       size += chunk.length;
       if (size > 1_048_576) {
+		rejected = true;
         res.status(413).end();
         req.destroy();
         return;
       }
       chunks.push(chunk);
     });
-    req.on('end', () => { req.body = Buffer.concat(chunks); next(); });
-    req.on('error', next);
+    req.on('end', () => { if (!rejected) { req.body = Buffer.concat(chunks); next(); } });
+    req.on('error', (error) => { if (!rejected) next(error); });
   };
 }
 

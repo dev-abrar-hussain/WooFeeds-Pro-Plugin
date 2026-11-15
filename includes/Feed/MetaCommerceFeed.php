@@ -51,6 +51,9 @@ final class MetaCommerceFeed extends AbstractFeedGenerator {
 					fwrite( $handle, '<g:' . $name . '>' . $this->xml( $value ) . '</g:' . $name . '>' . "\n" );
 				}
 			}
+			foreach ( $record['additional_image_links'] as $url ) {
+				fwrite( $handle, '<g:additional_image_link>' . $this->xml( $url ) . '</g:additional_image_link>' . "\n" );
+			}
 			fwrite( $handle, "</item>\n" );
 			++$count;
 		}

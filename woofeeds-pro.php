@@ -2,7 +2,7 @@
 /**
  * Plugin Name: WooFeeds Pro
  * Description: Generates hosted product feeds for Google Merchant Center, Meta Commerce Manager, and ChatGPT Business Hub.
- * Version:     0.1.0
+ * Version:     0.1.1
  * Author:      WooFeeds Pro
  * Text Domain: woofeeds-pro
  * Domain Path: /languages
@@ -13,7 +13,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'WOOFEEDS_PRO_VERSION', '0.1.0' );
+define( 'WOOFEEDS_PRO_VERSION', '0.1.1' );
 define( 'WOOFEEDS_PRO_FILE', __FILE__ );
 define( 'WOOFEEDS_PRO_DIR', plugin_dir_path( __FILE__ ) );
 define( 'WOOFEEDS_PRO_URL', plugin_dir_url( __FILE__ ) );

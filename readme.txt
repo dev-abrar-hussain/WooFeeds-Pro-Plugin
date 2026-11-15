@@ -3,7 +3,7 @@ Contributors: woofeedspro
 Tags: woocommerce, product feed, google merchant, meta catalog, chatgpt
 Requires at least: 6.4
 Requires PHP: 7.4
-Stable tag: 0.1.0
+Stable tag: 0.1.1
 License: Proprietary
 
 Generate hosted product feeds for Google Merchant Center, Meta Commerce Manager, and ChatGPT Business Hub.
@@ -40,6 +40,12 @@ A previously validated license uses the configured grace period. Existing feed
 files are preserved.
 
 == Changelog ==
+
+= 0.1.1 =
+
+* Normalized ChatGPT weight and dimension units to the current feed schema.
+* Added additional images to Meta catalog exports.
+* Hardened feed-directory checks, webhook size handling, and uninstall cleanup.
 
 = 0.1.0 =
 

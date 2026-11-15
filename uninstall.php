@@ -17,6 +17,8 @@ if ( empty( $settings['remove_data_on_uninstall'] ) ) {
 delete_option( 'woofeeds_pro_settings' );
 delete_option( 'woofeeds_pro_feed_status' );
 delete_option( 'woofeeds_pro_license' );
+delete_option( 'woofeeds_pro_validation' );
+delete_option( 'woofeeds_pro_generation_lock' );
 delete_transient( 'woofeeds_pro_license_check' );
 
 $uploads = wp_get_upload_dir();

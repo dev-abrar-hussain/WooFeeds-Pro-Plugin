@@ -25,8 +25,8 @@ Copy-Item -LiteralPath (Join-Path $serverSource 'package-lock.json') -Destinatio
 Copy-Item -LiteralPath (Join-Path $serverSource '.env.example') -Destination $serverStage
 Copy-Item -LiteralPath (Join-Path $serverSource 'README.md') -Destination $serverStage
 
-$pluginZip = Join-Path $distRoot 'woofeeds-pro-0.1.0.zip'
-$serverZip = Join-Path $distRoot 'woofeeds-license-server-0.1.0.zip'
+$pluginZip = Join-Path $distRoot 'woofeeds-pro-0.1.1.zip'
+$serverZip = Join-Path $distRoot 'woofeeds-license-server-0.1.1.zip'
 Compress-Archive -Path $pluginStage -DestinationPath $pluginZip -CompressionLevel Optimal -Force
 Compress-Archive -Path $serverStage -DestinationPath $serverZip -CompressionLevel Optimal -Force
 

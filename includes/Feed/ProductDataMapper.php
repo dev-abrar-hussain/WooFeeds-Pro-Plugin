@@ -65,7 +65,7 @@ final class ProductDataMapper {
 			'store_country'           => (string) ( $settings['store_country'] ?? 'US' ),
 			'target_countries'        => (array) ( $settings['target_countries'] ?? array( 'US' ) ),
 			'weight'                  => (string) $product->get_weight(),
-			'weight_unit'             => (string) get_option( 'woocommerce_weight_unit', 'kg' ),
+			'weight_unit'             => $this->weight_unit(),
 			'dimensions'              => $this->dimensions( $product ),
 		);
 	}
@@ -191,8 +191,26 @@ final class ProductDataMapper {
 		if ( count( $values ) < 2 ) {
 			return array();
 		}
-		$values['unit'] = (string) get_option( 'woocommerce_dimension_unit', 'cm' );
+		$unit = (string) get_option( 'woocommerce_dimension_unit', 'cm' );
+		if ( 'yd' === $unit ) {
+			foreach ( array( 'length', 'width', 'height' ) as $axis ) {
+				if ( isset( $values[ $axis ] ) ) {
+					$values[ $axis ] = wc_format_decimal( (float) $values[ $axis ] * 3, wc_get_price_decimals() );
+				}
+			}
+			$unit = 'ft';
+		}
+		if ( ! in_array( $unit, array( 'mm', 'cm', 'm', 'in', 'ft' ), true ) ) {
+			return array();
+		}
+		$values['unit'] = $unit;
 		return $values;
+	}
+
+	/** Normalize WooCommerce's plural pounds token to the feed schema token. */
+	private function weight_unit() {
+		$unit = (string) get_option( 'woocommerce_weight_unit', 'kg' );
+		return 'lbs' === $unit ? 'lb' : $unit;
 	}
 }
 

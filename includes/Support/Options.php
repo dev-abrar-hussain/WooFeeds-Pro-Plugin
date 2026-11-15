@@ -123,7 +123,10 @@ final class Options {
 	 */
 	public function ensure_feed_directory() {
 		$directory = $this->feed_directory();
-		return is_dir( $directory ) || wp_mkdir_p( $directory );
+		if ( ! is_dir( $directory ) && ! wp_mkdir_p( $directory ) ) {
+			return false;
+		}
+		return is_writable( $directory );
 	}
 
 	/**
